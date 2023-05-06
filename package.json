@@ -1,0 +1,46 @@
+{
+  "name": "@goopen/nestjs-schema-registry",
+  "version": "1.0.0",
+  "description": "Nest.js module for Confluent Schema Registry",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goopen-bit/nestjs-schema-registry.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/goopen-bit/nestjs-schema-registry/issues"
+  },
+  "homepage": "https://github.com/goopen-bit/nestjs-schema-registry#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/npm": "^10.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
+    "semantic-release": "^21.0.2",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^9.0.0",
+    "@kafkajs/confluent-schema-registry": "^3.3.0"
+  }
+}
