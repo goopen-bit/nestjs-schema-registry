@@ -40,7 +40,7 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "@nestjs/common": "^9.0.0",
-    "@kafkajs/confluent-schema-registry": "^3.3.0"
+    "@kafkajs/confluent-schema-registry": "^3.3.0",
+    "@nestjs/common": "^10.0.0"
   }
 }
