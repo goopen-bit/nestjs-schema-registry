@@ -35,6 +35,28 @@ npm install @goopen/nestjs-schema-registry @kafkajs/confluent-schema-registry
 export class KafkaModule {}
 ```
 
+Or if you wish to inject the ConfigModule to pull the configuration from environment variables
+
+```typescript
+@Module({
+  imports: [
+    ConfigModule.forRoot(),
+    SchemaRegistryModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        host: configService.get<string>('SCHEMA_REGISTRY_URL'),
+        auth: {
+          username: configService.get<string>('SCHEMA_REGISTRY_USERNAME'),
+          password: configService.get<string>('SCHEMA_REGISTRY_PASSWORD'),
+        },
+      }),
+    }),
+  ]
+})
+export class KafkaModule {}
+````
+
 ## 3. You're then able to use the injector to use the schema registry
 
 ```typescript

@@ -1,6 +1,5 @@
 import { SchemaRegistry } from '@kafkajs/confluent-schema-registry';
 import { Provider } from '@nestjs/common';
-
 import {
   SCHEMA_REGISTRY_CLIENT,
   SCHEMA_REGISTRY_MODULE_OPTIONS,
@@ -10,7 +9,9 @@ import { SchemaRegistryConfig } from './schema-registry.interfaces';
 export function createSchemaRegistryProvider(): Provider {
   return {
     provide: SCHEMA_REGISTRY_CLIENT,
-    useFactory: async (options: SchemaRegistryConfig) => {
+    useFactory: async (
+      options: SchemaRegistryConfig,
+    ): Promise<SchemaRegistry> => {
       return new SchemaRegistry(options);
     },
     inject: [SCHEMA_REGISTRY_MODULE_OPTIONS],
