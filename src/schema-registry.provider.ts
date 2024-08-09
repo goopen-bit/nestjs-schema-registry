@@ -9,9 +9,7 @@ import { SchemaRegistryConfig } from './schema-registry.interfaces';
 export function createSchemaRegistryProvider(): Provider {
   return {
     provide: SCHEMA_REGISTRY_CLIENT,
-    useFactory: async (
-      options: SchemaRegistryConfig,
-    ): Promise<SchemaRegistry> => {
+    useFactory: (options: SchemaRegistryConfig): SchemaRegistry => {
       return new SchemaRegistry(options);
     },
     inject: [SCHEMA_REGISTRY_MODULE_OPTIONS],
