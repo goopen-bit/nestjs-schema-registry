@@ -37,6 +37,7 @@ export class SchemaRegistryModule {
       imports: options.imports || [],
       providers,
       exports: providers,
+      global: options.global,
     };
   }
 
